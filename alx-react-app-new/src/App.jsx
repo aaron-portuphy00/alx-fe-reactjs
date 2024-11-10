@@ -14,9 +14,9 @@ function App() {
   return (
     <>
       <div>
+            <WelcomeMessage />
             <Header />
             <MainContent />
-            <WelcomeMessage />
             <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
             <Footer />
         <a href="https://vite.dev" target="_blank">
