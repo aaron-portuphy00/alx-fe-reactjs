@@ -6,6 +6,10 @@ import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
 import UserProfile from './components/UserProfile';
+<<<<<<< HEAD
+=======
+import WelcomeMessage from './components/WelcomeMessage';
+>>>>>>> 700e4d7198eaf6ebb903627a9f3d5bb5ca402cb0
 
 function App() {
   const [count, setCount] = useState(0)
@@ -13,6 +17,7 @@ function App() {
   return (
     <>
       <div>
+            <WelcomeMessage />
             <Header />
             <MainContent />
             <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
