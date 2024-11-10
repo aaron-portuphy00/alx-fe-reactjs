@@ -5,6 +5,7 @@ import './App.css'
 import Header from './components/Header';
 import MainContent from './components/MainContent';
 import Footer from './components/Footer';
+import UserProfile from './components/UserProfile';
 
 function App() {
   const [count, setCount] = useState(0)
@@ -14,6 +15,7 @@ function App() {
       <div>
             <Header />
             <MainContent />
+            <UserProfile name="Alice" age="25" bio="Loves hiking and photography" />
             <Footer />
         <a href="https://vite.dev" target="_blank">
           <img src={viteLogo} className="logo" alt="Vite logo" />
