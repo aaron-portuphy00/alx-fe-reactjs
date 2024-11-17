@@ -2,7 +2,8 @@ import React from 'react';
 import useRecipeStore from '../recipeStore';
 
 const RecipeDetails = ({ recipeId }) => {
-  const recipe = useRecipeStore(state => state.recipes.find(r => r.id === recipeId));
+  const recipe = useRecipeStore(state => state.recipes.find(recipe => recipe.id === recipeId)
+);
 
   return (
     <div>
