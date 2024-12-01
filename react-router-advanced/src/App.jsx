@@ -1,26 +1,26 @@
-import React from 'react';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
-import Home from './Home';
-import Profile from './Profile';
-import ProfileDetails from './ProfileDetails';
-import ProfileSettings from './ProfileSettings';
+import React from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import Profile from "./components/Profile";
+import BlogPost from "./components/BlogPost";
+import Home from "./components/Home";
+import ProtectedRoute from "./components/ProtectedRoute";
 
 function App() {
-  const isAuthenticated = true; // Mock authentication
-
   return (
-    <BrowserRouter>
+    <Router>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route
-          path="/profile"
-          element={isAuthenticated ? <Profile /> : <Navigate to="/" />}
-        >
-          <Route path="details" element={<ProfileDetails />} />
-          <Route path="settings" element={<ProfileSettings />} />
-        </Route>
+          path="/profile/*"
+          element={
+            <ProtectedRoute isAuthenticated={true}>
+              <Profile />
+            </ProtectedRoute>
+          }
+        />
+        <Route path="/blog/:postId" element={<BlogPost />} />
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
