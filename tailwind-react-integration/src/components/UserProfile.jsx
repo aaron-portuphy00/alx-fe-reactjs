@@ -8,10 +8,10 @@ function UserProfile() {
           alt="User"
           className="rounded-full w-24 h-24 sm:w-36 sm:h-36 mx-auto hover:scale-110 transition-transform duration-300"
         />
-        <h1 className="text-lg sm:text-xl text-blue-800 my-2 sm:my-4 hover:text-blue-500">
+        <h1 className="text-lg md:text-xl text-blue-800 my-2 sm:my-4 hover:text-blue-500">
           John Doe
         </h1>
-        <p className="text-sm sm:text-base text-gray-600">
+        <p className="text-sm md:text-base text-gray-600">
           Developer at Example Co. Loves to write code and explore new
           technologies.
         </p>
@@ -20,4 +20,3 @@ function UserProfile() {
   }
   
   export default UserProfile;
-  
