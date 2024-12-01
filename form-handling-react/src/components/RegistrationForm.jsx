@@ -1,20 +1,13 @@
 import React, { useState } from 'react';
 
 function RegistrationForm() {
-  const [formData, setFormData] = useState({
-    username: '',
-    email: '',
-    password: '',
-  });
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
+  const [username, setUsername] = useState('');
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Form Data Submitted:', formData);
+    console.log('Form Data Submitted:', { username, email, password });
   };
 
   return (
@@ -25,8 +18,8 @@ function RegistrationForm() {
           type="text"
           id="username"
           name="username"
-          value={formData.username} // Controlled value
-          onChange={handleChange}
+          value={username} // Controlled value
+          onChange={(e) => setUsername(e.target.value)}
         />
       </div>
       <div>
@@ -35,8 +28,8 @@ function RegistrationForm() {
           type="email"
           id="email"
           name="email"
-          value={formData.email} // Controlled value
-          onChange={handleChange}
+          value={email} // Controlled value
+          onChange={(e) => setEmail(e.target.value)}
         />
       </div>
       <div>
@@ -45,8 +38,8 @@ function RegistrationForm() {
           type="password"
           id="password"
           name="password"
-          value={formData.password} // Controlled value
-          onChange={handleChange}
+          value={password} // Controlled value
+          onChange={(e) => setPassword(e.target.value)}
         />
       </div>
       <button type="submit">Register</button>
