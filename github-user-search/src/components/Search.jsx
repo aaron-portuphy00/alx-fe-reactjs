@@ -55,6 +55,7 @@ const Search = () => {
       setPage(page + 1); // Increment page
       setHasMore(data.total_count > results.length + data.items.length); // Check if more results exist
     } catch (err) {
+      setError("Looks like we cant find the user");
       setError("Failed to load more results.");
     } finally {
       setLoading(false);
