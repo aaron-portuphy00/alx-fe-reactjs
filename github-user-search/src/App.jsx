@@ -1,11 +1,11 @@
 import React from 'react';
-import SearchComponent from './components/searchComponents.jsx';
+import Search from './components/Search.jsx';
 
 const App = () => {
   return (
     <div className="app-container">
       <h1>GitHub User Search</h1>
-      <SearchComponent />
+      <Search />
     </div>
   );
 };
