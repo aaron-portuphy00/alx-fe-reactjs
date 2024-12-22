@@ -1,14 +1,14 @@
 import axios from 'axios';
 
-const BASE_URL = 'https://api.github.com';
-
-export const fetchAdvancedUsers = async (query, page = 1) => {
+export const fetchUsersByCriteria = async (query) => {
+  const BASE_URL = 'https://api.github.com/search/users';
   try {
-    const response = await axios.get(`${BASE_URL}/search/users`, {
-      params: { q: query, page, per_page: 30 }, // Fetch 30 results per page
-    });
-    return response.data; // Includes items and total_count
+    const response = await axios.get(`${BASE_URL}?q=${query}`);
+    return response.data.items;
   } catch (error) {
-    throw new Error('Failed to fetch users');
+    throw new Error('No users found for the given criteria');
   }
 };
+
+
+
